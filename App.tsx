@@ -1,5 +1,5 @@
-import MainApp from "./src/MainApp";
+import HomeScreen from "./src/components/screens/HomeScreen";
 
 export default function App() {
-  return <MainApp />;
+  return <HomeScreen />;
 }
