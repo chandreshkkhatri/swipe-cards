@@ -74,7 +74,14 @@ A beautiful, modern news swiping application built with React Native and Expo. S
 
 ## 📱 Screenshots
 
-_Add your app screenshots here_
+<div align="center">
+  <img src="images/Screenshot_1750587214.png" alt="News Swiper Home Screen" width="300" />
+  <img src="images/Screenshot_1750587256.png" alt="News Swiper Article View" width="300" />
+</div>
+
+<p align="center">
+  <em>Beautiful, swipeable news cards with smooth animations and modern UI</em>
+</p>
 
 ## 🏗 Project Structure
 
