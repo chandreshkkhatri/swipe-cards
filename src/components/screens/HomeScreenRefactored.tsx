@@ -11,7 +11,13 @@ import { News } from "../../commons/types/News";
 import { useNewsSwiper } from "../../hooks/useNewsSwiper";
 import { mockNewsData } from "../../data/mockNews";
 import NewsCard from "../commons/NewsCard";
-import { Colors, Typography, Spacing, BorderRadius, Shadows } from "../../theme";
+import {
+  Colors,
+  Typography,
+  Spacing,
+  BorderRadius,
+  Shadows,
+} from "../../theme";
 import { SWIPER_CONFIG, LAYOUT } from "../../constants";
 import i18n from "../../services/internationalization/i18n";
 
@@ -43,14 +49,14 @@ const HomeScreen: React.FC = () => {
           backgroundColor: Colors.success,
           color: Colors.white,
           fontSize: Typography.fontSize.base,
-          fontWeight: 'bold' as const,
+          fontWeight: "bold" as const,
           borderRadius: BorderRadius.md,
           padding: Spacing.md,
         },
         wrapper: {
-          flexDirection: 'column' as const,
-          alignItems: 'center' as const,
-          justifyContent: 'center' as const,
+          flexDirection: "column" as const,
+          alignItems: "center" as const,
+          justifyContent: "center" as const,
         },
       },
     },
@@ -61,14 +67,14 @@ const HomeScreen: React.FC = () => {
           backgroundColor: Colors.warning,
           color: Colors.white,
           fontSize: Typography.fontSize.base,
-          fontWeight: 'bold' as const,
+          fontWeight: "bold" as const,
           borderRadius: BorderRadius.md,
           padding: Spacing.md,
         },
         wrapper: {
-          flexDirection: 'column' as const,
-          alignItems: 'center' as const,
-          justifyContent: 'center' as const,
+          flexDirection: "column" as const,
+          alignItems: "center" as const,
+          justifyContent: "center" as const,
         },
       },
     },
@@ -76,8 +82,12 @@ const HomeScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="transparent" translucent />
-      
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="transparent"
+        translucent
+      />
+
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.headerTitle}>{i18n.t("welcome")}</Text>
@@ -111,7 +121,9 @@ const HomeScreen: React.FC = () => {
           cardVerticalMargin={0}
           cardHorizontalMargin={0}
           animateCardOpacity={SWIPER_CONFIG.ANIMATE_CARD_OPACITY}
-          animateOverlayLabelsOpacity={SWIPER_CONFIG.ANIMATE_OVERLAY_LABELS_OPACITY}
+          animateOverlayLabelsOpacity={
+            SWIPER_CONFIG.ANIMATE_OVERLAY_LABELS_OPACITY
+          }
           overlayLabels={overlayLabels}
         />
       </View>
@@ -121,35 +133,40 @@ const HomeScreen: React.FC = () => {
         <TouchableOpacity
           style={[
             styles.navButton,
-            currentIndex === 0 && styles.navButtonDisabled
+            currentIndex === 0 && styles.navButtonDisabled,
           ]}
           onPress={goToPrevious}
           disabled={currentIndex === 0}
         >
-          <Text style={[
-            styles.navButtonText,
-            currentIndex === 0 && styles.navButtonTextDisabled
-          ]}>
+          <Text
+            style={[
+              styles.navButtonText,
+              currentIndex === 0 && styles.navButtonTextDisabled,
+            ]}
+          >
             ⬇️ Previous
           </Text>
         </TouchableOpacity>
-        
+
         <TouchableOpacity style={styles.refreshButton} onPress={refreshNews}>
           <Text style={styles.refreshButtonText}>🔄</Text>
         </TouchableOpacity>
-        
+
         <TouchableOpacity
           style={[
             styles.navButton,
-            currentIndex >= mockNewsData.length - 1 && styles.navButtonDisabled
+            currentIndex >= mockNewsData.length - 1 && styles.navButtonDisabled,
           ]}
           onPress={goToNext}
           disabled={currentIndex >= mockNewsData.length - 1}
         >
-          <Text style={[
-            styles.navButtonText,
-            currentIndex >= mockNewsData.length - 1 && styles.navButtonTextDisabled
-          ]}>
+          <Text
+            style={[
+              styles.navButtonText,
+              currentIndex >= mockNewsData.length - 1 &&
+                styles.navButtonTextDisabled,
+            ]}
+          >
             ⬆️ Next
           </Text>
         </TouchableOpacity>
@@ -172,7 +189,7 @@ const styles = StyleSheet.create({
   loadingText: {
     fontSize: Typography.fontSize.lg,
     color: Colors.text.secondary,
-    fontWeight: '500' as const,
+    fontWeight: "500" as const,
   },
   header: {
     flexDirection: "row",
@@ -185,8 +202,8 @@ const styles = StyleSheet.create({
     ...Shadows.sm,
   },
   headerTitle: {
-    fontSize: Typography.fontSize['2xl'],
-    fontWeight: '800' as const,
+    fontSize: Typography.fontSize["2xl"],
+    fontWeight: "800" as const,
     color: Colors.text.primary,
   },
   settingsButton: {
@@ -207,7 +224,7 @@ const styles = StyleSheet.create({
   counterText: {
     fontSize: Typography.fontSize.base,
     color: Colors.text.secondary,
-    fontWeight: '600' as const,
+    fontWeight: "600" as const,
   },
   swiperContainer: {
     flex: 1,
@@ -234,7 +251,7 @@ const styles = StyleSheet.create({
   },
   navButtonText: {
     fontSize: Typography.fontSize.sm,
-    fontWeight: '600' as const,
+    fontWeight: "600" as const,
     color: Colors.text.primary,
   },
   navButtonTextDisabled: {

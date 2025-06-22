@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import HomeScreen from "./src/components/screens/HomeScreen";
-import SplashScreen from "./src/components/screens/SplashScreen";
-import ErrorBoundary from "./src/components/commons/ErrorBoundary";
+import { HomeScreen, SplashScreen, ErrorBoundary } from "./src/components";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);

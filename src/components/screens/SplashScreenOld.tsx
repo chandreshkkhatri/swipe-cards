@@ -1,45 +1,49 @@
-import React, { useEffect, useRef } from "react";
-import { View, Text, StyleSheet, Animated, StatusBar } from "react-native";
-import { Colors, Typography, Spacing } from "../../theme";
-import { ANIMATION } from "../../constants";
+import React, { useEffect } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  Animated,
+  StatusBar,
+} from "react-native";
+// Temporarily commented out while fixing the import issue
+// import { LinearGradient } from "expo-linear-gradient";
+
+const { width, height } = Dimensions.get("window");
 
 interface SplashScreenProps {
   onFinish: () => void;
 }
 
 const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
-  const fadeAnim = useRef(new Animated.Value(0)).current;
-  const scaleAnim = useRef(new Animated.Value(0.8)).current;
+  const fadeAnim = new Animated.Value(0);
+  const scaleAnim = new Animated.Value(0.8);
 
   useEffect(() => {
-    const startAnimation = () => {
-      Animated.parallel([
-        Animated.timing(fadeAnim, {
-          toValue: 1,
-          duration: ANIMATION.FADE_DURATION,
-          useNativeDriver: true,
-        }),
-        Animated.timing(scaleAnim, {
-          toValue: 1,
-          duration: ANIMATION.SCALE_DURATION,
-          useNativeDriver: true,
-        }),
-      ]).start();
-    };
-
-    startAnimation();
+    Animated.parallel([
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 1000,
+        useNativeDriver: true,
+      }),
+      Animated.timing(scaleAnim, {
+        toValue: 1,
+        duration: 1000,
+        useNativeDriver: true,
+      }),
+    ]).start();
 
     const timer = setTimeout(() => {
       onFinish();
-    }, ANIMATION.SPLASH_DURATION);
+    }, 2500);
 
     return () => clearTimeout(timer);
   }, [fadeAnim, scaleAnim, onFinish]);
-
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor={Colors.primary} />
-      <View style={styles.background}>
+      <StatusBar barStyle="light-content" backgroundColor="#007AFF" />
+      <View style={styles.gradient}>
         <Animated.View
           style={[
             styles.content,
@@ -62,31 +66,31 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  background: {
+  gradient: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: Colors.primary,
+    backgroundColor: "#007AFF",
   },
   content: {
     alignItems: "center",
   },
   emoji: {
     fontSize: 80,
-    marginBottom: Spacing.lg,
+    marginBottom: 20,
   },
   title: {
-    fontSize: Spacing.xl,
-    fontWeight: "800" as const,
-    color: Colors.white,
-    marginBottom: Spacing.sm,
+    fontSize: 32,
+    fontWeight: "800",
+    color: "white",
+    marginBottom: 8,
     textAlign: "center",
   },
   subtitle: {
-    fontSize: Typography.fontSize.base,
+    fontSize: 16,
     color: "rgba(255, 255, 255, 0.8)",
     textAlign: "center",
-    fontWeight: "500" as const,
+    fontWeight: "500",
   },
 });
 

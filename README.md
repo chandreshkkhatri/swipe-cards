@@ -1,4 +1,4 @@
-# 📰 News Swiper - React Native Boilerplate
+# 📰 Swipe Cards - React Native Boilerplate
 
 A beautiful, modern news swiping application built with React Native and Expo. Swipe through news articles with smooth animations and an intuitive user interface.
 
@@ -37,8 +37,8 @@ A beautiful, modern news swiping application built with React Native and Expo. S
 
 1. **Clone the repository**
    \`\`\`bash
-   git clone https://github.com/yourusername/news-swiper-react-native-boilerplate.git
-   cd news-swiper-react-native-boilerplate
+   git clone https://github.com/yourusername/swipe-cards-react-native-boilerplate.git
+   cd swipe-cards-react-native-boilerplate
    \`\`\`
 
 2. **Install dependencies**
@@ -186,7 +186,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- [react-native-deck-swiper](https://github.com/alexbrillant/react-native-deck-swiper) - For the amazing swiper component
+- [react-native-deck-swiper](https://github.com/alexbrillant/react-native-deck-swiper) - For the amazing cards
 - [Expo](https://expo.dev/) - For the excellent development platform
 - [Unsplash](https://unsplash.com/) - For the beautiful placeholder images
 
