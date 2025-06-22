@@ -85,27 +85,67 @@ A beautiful, modern news swiping application built with React Native and Expo. S
 
 ## 🏗 Project Structure
 
-\`\`\`
-src/
-├── components/
-│ ├── commons/
-│ │ ├── NewsCard.tsx # Individual news card component
-│ │ └── ErrorBoundary.tsx # Error handling component
-│ └── screens/
-│ ├── HomeScreen.tsx # Main app screen
-│ └── SplashScreen.tsx # App launch screen
-├── commons/
-│ └── types/
-│ └── News.ts # TypeScript interfaces
-├── services/
-│ └── internationalization/
-│ ├── i18n.ts # i18n configuration
-│ └── translations/ # Translation files
-├── theme/
-│ └── index.ts # Design system (colors, typography, etc.)
-└── utils/
-└── helpers.ts # Utility functions
-\`\`\`
+```
+swipe-cards/
+├── src/
+│   ├── components/
+│   │   ├── commons/
+│   │   │   ├── NewsCard.tsx          # Individual news card component
+│   │   │   ├── NewsCardOld.tsx       # Legacy news card component
+│   │   │   ├── NewsCardRefactored.tsx # Refactored news card component
+│   │   │   └── ErrorBoundary.tsx     # Error handling component
+│   │   ├── screens/
+│   │   │   ├── HomeScreen.tsx        # Main app screen
+│   │   │   ├── HomeScreenOld.tsx     # Legacy home screen
+│   │   │   ├── HomeScreenRefactored.tsx # Refactored home screen
+│   │   │   ├── SplashScreen.tsx      # App launch screen
+│   │   │   ├── SplashScreenOld.tsx   # Legacy splash screen
+│   │   │   └── SplashScreenRefactored.tsx # Refactored splash screen
+│   │   ├── ui/
+│   │   │   ├── ActionButtons.tsx     # Reusable action buttons
+│   │   │   ├── CategoryBadge.tsx     # Category display component
+│   │   │   └── MetaInfo.tsx          # Meta information component
+│   │   └── index.ts                  # Component exports
+│   ├── commons/
+│   │   └── types/
+│   │       ├── News.ts               # News-related TypeScript interfaces
+│   │       └── i18n.ts               # Internationalization types
+│   ├── constants/
+│   │   └── index.ts                  # App constants
+│   ├── data/
+│   │   └── mockNews.ts               # Mock news data
+│   ├── hooks/
+│   │   └── useNewsSwiper.ts          # Custom hook for news swiping logic
+│   ├── services/
+│   │   └── internationalization/
+│   │       ├── i18n.ts               # i18n configuration
+│   │       ├── i18n.utils.ts         # i18n utility functions
+│   │       └── translations/         # Translation files directory
+│   ├── theme/
+│   │   └── index.ts                  # Design system (colors, typography, etc.)
+│   ├── utils/
+│   │   └── helpers.ts                # Utility functions
+│   └── __tests__/
+│       └── helpers.test.ts           # Unit tests
+├── assets/                           # Static assets
+│   ├── adaptive-icon.png
+│   ├── favicon.png
+│   ├── icon.png
+│   └── splash.png
+├── images/                           # Screenshot images
+├── android/                          # Android-specific files
+├── App.tsx                           # Main App component
+├── index.js                          # Entry point
+├── package.json                      # Dependencies and scripts
+├── tsconfig.json                     # TypeScript configuration
+├── babel.config.js                   # Babel configuration
+├── metro.config.js                   # Metro bundler configuration
+├── app.json                          # Expo app configuration
+├── eas.json                          # Expo Application Services configuration
+├── config.ts                         # App configuration
+├── environment.ts                    # Environment variables
+└── README.md                         # Project documentation
+```
 
 ## 🎨 Customization
 
@@ -166,7 +206,7 @@ Add new language files in \`src/services/internationalization/translations/\`:
 - \`npm run build:ios\` - Build iOS app
 - \`npm run build:all\` - Build for all platforms
 
-## 📋 TODO / Roadmap
+## 📋 Potential Future Features
 
 - [ ] Integrate with real news API
 - [ ] Add offline support
