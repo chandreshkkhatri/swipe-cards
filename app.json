@@ -41,11 +41,6 @@
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
-    "extra": {
-      "eas": {
-        "projectId": "e3bf33f0-480c-49ad-bbd0-6c029f45ccae"
-      }
-    },
     "owner": "chandresh.code",
     "runtimeVersion": {
       "policy": "sdkVersion"
@@ -60,6 +55,11 @@
       "web"
     ],
     "privacy": "public",
-    "primaryColor": "#007AFF"
+    "primaryColor": "#007AFF",
+    "extra": {
+      "eas": {
+        "projectId": "8862dd0a-d538-418c-a46a-ed1d531aecec"
+      }
+    }
   }
 }
